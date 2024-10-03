@@ -53,7 +53,7 @@
             "schema": {
               "type": "string",
               "enum": [
-                "763150753c5e031e5ded41925f2d5c253a1690ef7e8671c9e2fd4985cd731dd8"
+                "{personal api key}"
               ]
             }
           }
