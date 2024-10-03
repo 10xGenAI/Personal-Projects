@@ -1,5 +1,5 @@
 import os
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "sk-{use your private key}"
 from collections import deque
 from typing import Dict, List, Optional, Any
 
