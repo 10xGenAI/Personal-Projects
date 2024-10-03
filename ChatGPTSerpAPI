@@ -1,0 +1,84 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Mulitple Search API Engines",
+    "description": "API for using Google and Youtube search engines",
+    "version": "v1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://serpapi.com"
+    }
+  ],
+  "paths": {
+    "/search": {
+      "get": {
+        "summary": "Search using Google or Youtube APIs",
+        "operationId": "MultiSearchEngine",
+        "description": "Retrieves search results from Google or Youtub for a given query.",
+        "parameters": [
+          {
+            "name": "engine",
+            "in": "query",
+            "description": "Search engine to use, set to 'google' or 'youtube'.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["google", "youtube"],
+              "example": "google"
+            }
+          },
+          {
+            "name": "search_query",
+            "in": "query",
+            "description": "Query to search for on Youtube.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Query to search for on Google.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api_key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "763150753c5e031e5ded41925f2d5c253a1690ef7e8671c9e2fd4985cd731dd8"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with search results.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
